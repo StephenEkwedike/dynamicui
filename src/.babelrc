@@ -1,4 +1,6 @@
 {
+     // The "presets" property is an array that specifies the Babel presets to be used for transforming the code.
+    // "@babel/preset-env" allows you to use the latest JavaScript features by compiling them down to a version that is compatible with the target environments you specify.
+    // "@babel/preset-react" enables the transformation of JSX syntax into JavaScript, allowing you to write React components using JSX.
     "presets": ["@babel/preset-env", "@babel/preset-react"]
   }
-  

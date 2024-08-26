@@ -2,22 +2,61 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- <link rel="stylesheet" href="./styles.css"> -->
-
-
     <title>DynamicUI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
-  <body>
-    <h2>Hoverable Dropdown</h2>
-    <p>Move the mouse over the text below to open the dropdown content.</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="runtime.bundle.js"></script>
+    <script defer src="index.bundle.js"></script>
 
+    <style>
+      .carousel-container {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+      .carousel-slides {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      .slide {
+        min-width: 100%;
+        height: 100%;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* ... existing styles ... */
+    </style>
+  </head>
+  <body>
     <div class="dropdown">
-      <span>Mouse over me</span>
+      <button class="dropbtn">Dropdown</button>
       <div class="dropdown-content">
-        <p>Hello World!</p>
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
       </div>
     </div>
 
+    <div class="carousel-container">
+      <div class="carousel-slides">
+        <div class="slide"><img src="../images/image1.jpg" alt="Image 1"></div>
+        <div class="slide"><img src="../images/image2.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="../images/image3.jpg" alt="Image 3"></div>
+      </div>
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+    <div class="carousel-dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
 
+  
   </body>
 </html>
